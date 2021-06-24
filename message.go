@@ -170,6 +170,7 @@ type File struct {
 type MessageSend struct {
 	Content         string                  `json:"content,omitempty"`
 	Embed           *MessageEmbed           `json:"embed,omitempty"`
+	Components      []MessageComponent      `json:"components"`
 	TTS             bool                    `json:"tts"`
 	Files           []*File                 `json:"-"`
 	AllowedMentions *MessageAllowedMentions `json:"allowed_mentions,omitempty"`
@@ -184,6 +185,7 @@ type MessageSend struct {
 type MessageEdit struct {
 	Content         *string                 `json:"content,omitempty"`
 	Embed           *MessageEmbed           `json:"embed,omitempty"`
+	Components      []MessageComponent      `json:"components"`
 	AllowedMentions *MessageAllowedMentions `json:"allowed_mentions,omitempty"`
 
 	ID      string
