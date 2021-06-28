@@ -265,7 +265,7 @@ type InteractionApplicationCommandResponseData struct {
 	TTS             bool                    `json:"tts,omitempty"`
 	Content         string                  `json:"content,omitempty"`
 	Embeds          []*MessageEmbed         `json:"embeds,omitempty"`
-	Components      []*MessageComponent     `json:"components,omitempty"`
+	Components      []*MessageComponent     `json:"components"`
 	AllowedMentions *MessageAllowedMentions `json:"allowed_mentions,omitempty"`
 
 	// NOTE: Undocumented feature, be careful with it.
