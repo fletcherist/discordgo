@@ -73,6 +73,37 @@ type ChannelPinsUpdate struct {
 	GuildID          string `json:"guild_id,omitempty"`
 }
 
+type ThreadCreate struct {
+	*Channel
+}
+
+type ThreadUpdate struct {
+	*Channel
+}
+
+type ThreadDelete struct {
+	*Channel
+}
+
+type ThreadMemberUpdate struct {
+	*ThreadMember
+}
+
+type ThreadMembersUpdate struct {
+	ID               string          `json:"id"`
+	GuildID          string          `json:"guild_id"`
+	MemberCount      int             `json:"member_count"`
+	AddedMembers     []*ThreadMember `json:"added_members"`
+	RemovedMemberIDs []string        `json:"removed_member_ids"`
+}
+
+type ThreadListSync struct {
+	GuildID    string         `json:"guild_id"`
+	ChannelIDs []string       `json:"channel_ids,omitempty"`
+	Threads    []Channel      `json:"threads"`
+	Members    []ThreadMember `json:"members"`
+}
+
 // GuildCreate is the data for a GuildCreate event.
 type GuildCreate struct {
 	*Guild
