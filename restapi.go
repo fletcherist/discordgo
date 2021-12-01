@@ -1888,7 +1888,7 @@ func (s *Session) RemoveThreadMember(channelID string, userID string) (err error
 
 	endpoint := EndpointChannelMember(channelID, userID)
 
-	_, err = s.RequestWithBucketID("PUT", endpoint, nil, endpoint)
+	_, err = s.RequestWithBucketID("DELETE", endpoint, nil, endpoint)
 	return
 }
 
